@@ -1,0 +1,251 @@
+/* =====================================
+   SPETIME SAFETY GUIDE
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.safety-page {
+    min-height: 100vh;
+    background: #100d13;
+    color: #f5edf4;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.8;
+}
+
+/* HEADER */
+
+.safety-header {
+    width: 100%;
+    background: #17121c;
+    border-bottom: 1px solid rgba(241, 163, 199, 0.18);
+}
+
+.safety-header-inner {
+    width: min(1100px, 92%);
+    min-height: 76px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.safety-logo {
+    color: #f1a3c7;
+    font-size: 30px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.safety-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.safety-nav a {
+    color: #eee3ed;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.safety-nav a:hover,
+.safety-nav a:focus-visible {
+    color: #f1a3c7;
+}
+
+/* HERO */
+
+.safety-hero {
+    padding: 65px 20px 55px;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(157, 74, 123, 0.2),
+            transparent 65%
+        ),
+        #100d13;
+}
+
+.safety-eyebrow {
+    margin-bottom: 10px;
+    color: #f1a3c7;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.safety-hero h1 {
+    margin-bottom: 14px;
+    color: #fff4fa;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.2;
+}
+
+.safety-hero > p:not(.safety-eyebrow) {
+    width: min(650px, 100%);
+    margin: 0 auto;
+    color: #c8b9c7;
+}
+
+/* CONTENT */
+
+.safety-content {
+    width: min(850px, 90%);
+    margin: 0 auto;
+    padding: 35px 0 75px;
+}
+
+.safety-note {
+    margin-bottom: 38px;
+    padding: 20px 22px;
+    background: #211725;
+    border: 1px solid rgba(241, 163, 199, 0.3);
+    border-left: 4px solid #e58ab7;
+    border-radius: 10px;
+    color: #eadde8;
+}
+
+.safety-note strong {
+    color: #f1a3c7;
+}
+
+.safety-content h2 {
+    margin: 35px 0 12px;
+    color: #f1a3c7;
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+.safety-content h2:first-of-type {
+    margin-top: 0;
+}
+
+.safety-content p {
+    margin-bottom: 16px;
+    color: #d5c9d4;
+    font-size: 15px;
+}
+
+.safety-content ul {
+    margin: 0 0 22px 25px;
+    color: #d5c9d4;
+}
+
+.safety-content li {
+    margin-bottom: 9px;
+    padding-left: 5px;
+}
+
+.safety-content a {
+    color: #f1a3c7;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.safety-content a:hover,
+.safety-content a:focus-visible {
+    color: #ffffff;
+}
+
+/* FOOTER */
+
+.safety-footer {
+    padding: 28px 20px;
+    background: #17121c;
+    border-top: 1px solid rgba(241, 163, 199, 0.18);
+    text-align: center;
+}
+
+.safety-footer p {
+    margin-bottom: 12px;
+    color: #bcaebe;
+    font-size: 13px;
+}
+
+.safety-footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.safety-footer-links a {
+    color: #e8c6da;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.safety-footer-links a:hover,
+.safety-footer-links a:focus-visible,
+.safety-footer-links a[aria-current="page"] {
+    color: #f1a3c7;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .safety-header-inner {
+        padding: 15px 0;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .safety-logo {
+        font-size: 27px;
+    }
+
+    .safety-nav {
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .safety-hero {
+        padding: 45px 18px;
+    }
+
+    .safety-content {
+        width: 90%;
+        padding-top: 25px;
+    }
+
+    .safety-content h2 {
+        font-size: 20px;
+    }
+
+    .safety-content p,
+    .safety-content li {
+        font-size: 14px;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
+```
