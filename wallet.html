@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Creator Wallet | Spetime</title>
+    <meta name="description" content="Manage your Spetime creator earnings and wallet.">
+
+    <link rel="stylesheet" href="wallet.css">
+</head>
+
+<body class="wallet-page">
+
+    <header class="wallet-header">
+        <a href="index.html" class="wallet-logo">Spetime</a>
+
+        <nav class="wallet-nav">
+            <a href="creators.html">Creator Studio</a>
+            <a href="gallery.html">Explore</a>
+            <a href="profile.html">My Profile</a>
+        </nav>
+
+        <button type="button" id="logout-button" class="logout-button">
+            Log out
+        </button>
+    </header>
+
+    <main class="wallet-container">
+
+        <section class="wallet-heading">
+            <p class="wallet-eyebrow">CREATOR FINANCES</p>
+            <h1>My Wallet</h1>
+            <p>
+                Manage your earnings, review transactions, and track
+                your creator income.
+            </p>
+        </section>
+
+        <div class="wallet-notice" role="status">
+            <strong>Setup mode:</strong>
+            Real deposits, withdrawals, and payments are not connected.
+            Your displayed balance is not real money.
+        </div>
+
+        <section class="balance-card">
+            <div class="balance-top">
+                <div>
+                    <p class="balance-label">Available balance</p>
+                    <h2 id="wallet-balance">$0.00 <span>USD</span></h2>
+                </div>
+
+                <div class="wallet-icon" aria-hidden="true">＄</div>
+            </div>
+
+            <div class="balance-details">
+                <div>
+                    <span>Pending earnings</span>
+                    <strong id="pending-balance">$0.00</strong>
+                </div>
+
+                <div>
+                    <span>Total creator earnings</span>
+                    <strong id="total-earnings">$0.00</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="wallet-actions">
+            <button type="button" class="wallet-action" id="deposit-button">
+                <span class="action-icon">↓</span>
+                <span>
+                    <strong>Deposit</strong>
+                    <small>Add funds</small>
+                </span>
+            </button>
+
+            <button type="button" class="wallet-action" id="withdraw-button">
+                <span class="action-icon">↑</span>
+                <span>
+                    <strong>Withdraw</strong>
+                    <small>Request payout</small>
+                </span>
+            </button>
+        </section>
+
+        <section class="wallet-panel" id="wallet-action-panel" hidden>
+            <div class="panel-heading">
+                <h2 id="action-panel-title">Wallet action</h2>
+
+                <button
+                    type="button"
+                    id="close-panel-button"
+                    class="close-button"
+                    aria-label="Close wallet action"
+                >×</button>
+            </div>
+
+            <p id="action-panel-description"></p>
+
+            <form id="wallet-action-form">
+                <label for="wallet-amount">Amount (USD)</label>
+
+                <div class="amount-input-wrap">
+                    <span>$</span>
+                    <input
+                        type="number"
+                        id="wallet-amount"
+                        min="1"
+                        max="100000"
+                        step="0.01"
+                        placeholder="0.00"
+                        required
+                    >
+                </div>
+
+                <div id="payout-details" hidden>
+                    <label for="payout-method">Preferred payout method</label>
+
+                    <select id="payout-method">
+                        <option value="local">Local bank account, where supported</option>
+                        <option value="usd">USD bank account, where supported</option>
+                    </select>
+
+                    <p class="field-note">
+                        Payout methods will only be enabled after a provider
+                        approves Spetime and verifies your account.
+                    </p>
+                </div>
+
+                <button type="submit" id="submit-wallet-action" class="primary-button">
+                    Continue
+                </button>
+
+                <p id="wallet-action-message" class="form-message" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="wallet-panel transaction-panel">
+            <div class="transactions-heading">
+                <div>
+                    <h2>Transaction history</h2>
+                    <p>Review your wallet activity.</p>
+                </div>
+
+                <span class="transaction-count" id="transaction-count">0 records</span>
+            </div>
+
+            <div class="transaction-filters">
+                <label for="transaction-filter">Filter transactions</label>
+
+                <select id="transaction-filter">
+                    <option value="all">All transactions</option>
+                    <option value="deposit">Deposits</option>
+                    <option value="earning">Creator earnings</option>
+                    <option value="commission">Platform commission</option>
+                    <option value="withdrawal">Withdrawals</option>
+                    <option value="refund">Refunds</option>
+                </select>
+            </div>
+
+            <div id="transaction-list" class="transaction-list">
+                <div class="empty-transactions">
+                    <div class="empty-icon" aria-hidden="true">↔</div>
+                    <h3>No transactions yet</h3>
+                    <p>
+                        Verified deposits, creator earnings, and withdrawals
+                        will appear here when the wallet backend is connected.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <p class="wallet-security-note">
+            Your real wallet will require secure authentication and server-side
+            verification of every financial transaction. Never share your password.
+        </p>
+
+    </main>
+
+    <footer class="wallet-footer">
+        <p>© <span id="current-year"></span> Spetime</p>
+
+        <div>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="safety.html">Safety</a>
+        </div>
+    </footer>
+
+    <script src="wallet.js"></script>
+</body>
+</html>
