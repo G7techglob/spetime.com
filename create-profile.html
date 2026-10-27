@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Creator Profile | Spetime</title>
+
+    <link rel="stylesheet" href="creators.css">
+    <link rel="stylesheet" href="create-profile.css">
+</head>
+
+<body class="creators-page">
+
+    <header class="creators-header">
+        <div class="creators-header-inner">
+            <a href="index.html" class="creators-logo">Spetime</a>
+
+            <nav class="creators-nav">
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Explore</a>
+                <a href="creators.html">Creator Studio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="create-profile-main">
+
+        <section class="create-profile-card">
+
+            <p class="creators-eyebrow">JOIN THE COMMUNITY</p>
+
+            <h1>Create Your Creator Profile</h1>
+
+            <p class="create-profile-intro">
+                Introduce yourself to the Spetime community and set up
+                your public creator identity.
+            </p>
+
+            <div class="create-profile-notice">
+                <strong>Important:</strong>
+                This form is currently a setup preview. Your profile will
+                not be permanently saved or published until secure storage
+                and account authentication are connected.
+            </div>
+
+            <form id="creator-profile-form">
+
+                <div class="create-profile-field">
+                    <label for="creator-display-name">
+                        Public display name *
+                    </label>
+                    <input
+                        type="text"
+                        id="creator-display-name"
+                        name="display_name"
+                        placeholder="Enter your display name"
+                        maxlength="60"
+                        required
+                    >
+                </div>
+
+                <div class="create-profile-field">
+                    <label for="creator-username">Username *</label>
+                    <input
+                        type="text"
+                        id="creator-username"
+                        name="username"
+                        placeholder="yourusername"
+                        minlength="3"
+                        maxlength="30"
+                        pattern="[A-Za-z0-9_]+"
+                        required
+                    >
+                    <small>Letters, numbers, and underscores only.</small>
+                </div>
+
+                <div class="create-profile-field">
+                    <label for="creator-bio">About you</label>
+                    <textarea
+                        id="creator-bio"
+                        name="bio"
+                        rows="5"
+                        maxlength="500"
+                        placeholder="Write a short introduction..."
+                    ></textarea>
+                </div>
+
+                <div class="create-profile-field">
+                    <label for="creator-location">Country or region</label>
+                    <input
+                        type="text"
+                        id="creator-location"
+                        name="location"
+                        maxlength="80"
+                        placeholder="Your country or region"
+                    >
+                    <small>Optional. Do not enter your home address.</small>
+                </div>
+
+                <div class="create-profile-field">
+                    <label for="creator-profile-image">Profile picture</label>
+                    <input
+                        type="file"
+                        id="creator-profile-image"
+                        name="profile_image"
+                        accept="image/jpeg,image/png,image/webp"
+                    >
+                    <small>
+                        JPG, PNG, or WebP. This image will not be uploaded
+                        until secure storage is connected.
+                    </small>
+                </div>
+
+                <div class="create-profile-field">
+                    <label for="creator-social-link">
+                        Website or social link
+                    </label>
+                    <input
+                        type="url"
+                        id="creator-social-link"
+                        name="social_link"
+                        placeholder="https://example.com"
+                    >
+                    <small>Optional. Only share links you want public.</small>
+                </div>
+
+                <label class="create-profile-consent">
+                    <input
+                        type="checkbox"
+                        id="creator-profile-consent"
+                        required
+                    >
+                    <span>
+                        I confirm that I am at least 18 years old, my
+                        information is accurate, and I have permission
+                        to use my profile picture.
+                    </span>
+                </label>
+
+                <button type="submit" class="creator-button">
+                    Create Profile
+                </button>
+
+                <p
+                    id="creator-profile-message"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+            <p class="create-profile-back">
+                Already working on your creator page?
+                <a href="creators.html">Return to Creator Studio</a>
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer class="creators-footer">
+        <p>&copy; 2026 Spetime. All rights reserved.</p>
+    </footer>
+
+    <script src="create-profile.js"></script>
+</body>
+</html>
