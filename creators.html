@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Creator Studio | Spetime</title>
+
+    <meta name="description"
+        content="Spetime Creator Studio for adult creators to manage profiles and prepare photo and video posts.">
+
+    <link rel="stylesheet" href="creators.css">
+</head>
+
+<body class="creators-page">
+
+    <header class="creators-header">
+        <div class="creators-header-inner">
+            <a href="index.html" class="creators-logo">Spetime</a>
+
+            <nav class="creators-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Explore</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="creators-main">
+
+        <section class="creators-hero">
+            <p class="creators-eyebrow">SPETIME CREATOR STUDIO</p>
+            <h1>Your content. Your page. Your audience.</h1>
+            <p>
+                Create your profile, prepare photo and video posts,
+                and choose which content is free or reserved for paying members.
+            </p>
+            <p class="creators-notice">
+                Adults 18+ only. Publishing and payments are not connected yet.
+            </p>
+        </section>
+
+        <section class="creators-dashboard">
+
+            <div class="creators-section-heading">
+                <div>
+                    <h2>Creator dashboard</h2>
+                    <p>Manage your creator presence on Spetime.</p>
+                </div>
+                <span class="creators-status">Preview mode</span>
+            </div>
+
+            <div class="creators-cards">
+
+                <article class="creator-card">
+                    <span class="creator-card-icon" aria-hidden="true">◎</span>
+                    <h3>My profile</h3>
+                    <p>Set up your creator name, profile image, and biography.</p>
+                    <button type="button" class="creator-button"
+                        data-notice="Profile editing will be enabled after creator accounts are connected.">
+                        Set up profile
+                    </button>
+                </article>
+
+                <article class="creator-card">
+                    <span class="creator-card-icon" aria-hidden="true">＋</span>
+                    <h3>Create a post</h3>
+                    <p>Prepare a photo or video post for your page.</p>
+                    <button type="button" class="creator-button"
+                        data-notice="Real media uploads are disabled until secure storage is configured.">
+                        Create post
+                    </button>
+                </article>
+
+                <article class="creator-card">
+                    <span class="creator-card-icon" aria-hidden="true">◇</span>
+                    <h3>Memberships</h3>
+                    <p>Plan free posts and content for paid members.</p>
+                    <button type="button" class="creator-button"
+                        data-notice="Paid memberships will be enabled after an approved payment provider is connected.">
+                        Manage access
+                    </button>
+                </article>
+
+            </div>
+
+            <section class="creator-publishing">
+                <h2>Prepare a post</h2>
+                <p class="creator-help">
+                    This is a preview of the publishing form. It does not
+                    upload files or save posts.
+                </p>
+
+                <form id="creator-post-form">
+
+                    <label for="post-title">Post title</label>
+                    <input
+                        type="text"
+                        id="post-title"
+                        name="post-title"
+                        maxlength="100"
+                        placeholder="Enter a title"
+                        required
+                    >
+
+                    <label for="post-description">Description</label>
+                    <textarea
+                        id="post-description"
+                        name="post-description"
+                        rows="4"
+                        maxlength="2000"
+                        placeholder="Write a description for your post"
+                        required
+                    ></textarea>
+
+                    <label for="post-type">Content type</label>
+                    <select id="post-type" name="post-type" required>
+                        <option value="photo">Photo</option>
+                        <option value="video">Video</option>
+                    </select>
+
+                    <label for="post-access">Who can view this post?</label>
+                    <select id="post-access" name="post-access" required>
+                        <option value="free">Free for eligible visitors</option>
+                        <option value="paid">Paid members only</option>
+                    </select>
+
+                    <div id="post-price-field" hidden>
+                        <label for="post-price">Proposed price</label>
+                        <input
+                            type="number"
+                            id="post-price"
+                            name="post-price"
+                            min="1"
+                            step="1"
+                            placeholder="Enter a proposed amount"
+                        >
+                        <p class="creator-help">
+                            Preview only. No currency or payment is configured.
+                        </p>
+                    </div>
+
+                    <label for="post-file">Choose a sample media file</label>
+                    <input
+                        type="file"
+                        id="post-file"
+                        name="post-file"
+                        accept="image/*,video/*"
+                    >
+                    <p class="creator-help">
+                        The selected file will not be uploaded or stored.
+                        Do not select sensitive media for this preview.
+                    </p>
+
+                    <label class="creator-consent">
+                        <input type="checkbox" id="rights-confirmation" required>
+                        <span>
+                            I confirm that any content I eventually publish
+                            must involve consenting adults and that I have
+                            the necessary rights and permissions to share it.
+                        </span>
+                    </label>
+
+                    <button type="submit" class="creator-button creator-submit">
+                        Preview post details
+                    </button>
+
+                    <p id="creator-form-status" role="status" aria-live="polite"></p>
+                </form>
+            </section>
+
+            <section class="creator-posts">
+                <h2>My posts</h2>
+                <div class="creator-empty-state">
+                    <span aria-hidden="true">▧</span>
+                    <h3>No posts yet</h3>
+                    <p>Your posts will appear here after accounts, storage,
+                        and publishing are connected.</p>
+                </div>
+            </section>
+
+        </section>
+    </main>
+
+    <footer class="creators-footer">
+        <p>&copy; <span id="current-year">2026</span> Spetime. All rights reserved.</p>
+        <nav aria-label="Legal links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="safety.html">Safety</a>
+        </nav>
+    </footer>
+
+    <script src="creators.js"></script>
+</body>
+</html>
